@@ -1,0 +1,73 @@
+pip install nltk
+import nltk
+from nltk.chat.util import Chat, reflections
+import random
+import string
+pairs = [
+    [
+        r"What is your name?",
+        [" Hi, I am a customer service chatbot. You can call me ChatGPT"]
+    ],
+    [
+        r"How old are you?",
+        ["I am a computer program, so I don't have an age"]
+    ],
+    [
+        r"What is your favorite color?",
+        ["I don't have a favorite color, but I think all colors are beautiful in their own way."]
+    ],
+    [
+        r"Can you tell me a joke?",
+        ["Sure, here's one: Why don't scientists trust atoms? Because they make up everything!"]
+    ],
+    [
+        r"What is the weather like today?",
+        ["I'm sorry, I don't have access to real-time weather information."]
+    ],
+    [
+        r"What is the meaning of life?",
+        ["That's a philosophical question that has puzzled humans for centuries. What do you think the meaning of life is?"]
+    ],
+     [
+        r"How can you help me?",
+        ["I can assist you with any questions or issues you may have regarding our products or services"]
+    ],
+    [
+        r"How old are you?",
+        ["I am a computer program, so I don't have an age"]
+    ],
+    [
+        r"What are your business hours?",
+        ["We're available 24/7 to assist you."]
+    ],
+    [
+        r"How can I contact you?",
+        ["You can contact us through this chat or email us at [navneetsharma10747@gmail.com].]
+    ],
+    [
+        r"What types of products do you offer?",
+        ["We offer a variety of products ranging from electronics to household items."]
+    ],
+    [
+        r"What is the meaning of life?",
+        ["That's a philosophical question that has puzzled humans for centuries. What do you think the meaning of life is?"]
+    ],
+  
+    [
+        r"quit",
+        ["Bye! Take care."]
+    ]
+]
+def chatbot_response(message):
+    chatbot = Chat(pairs, reflections)
+    response = chatbot.respond(message)
+    return response
+ print("Hello, I'm chatbox. How can I help you today?")
+
+while True:
+    message = input("> ")
+    if message.lower() == "quit":
+        break
+    else:
+        response = chatbot_response(message)
+        print(response)
